@@ -1,0 +1,24 @@
+<%= form_for(@survey) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+  <h2>1. Sube tu archivo...</h2>
+  <div class="field">
+    <%= f.label :q40, "Lo vas a dejar pagado?" %><br>
+    <%= f.radio_button :q40, 1, class:"radio" %>Cobrar de mi morralla
+    <%= f.radio_button :q40, 2, class:"radio" %>Pago contra entrega
+    
+  </div>
+  <div class="actions">
+    <%= f.submit "Imprimir" %>
+  </div>
+<% end %>

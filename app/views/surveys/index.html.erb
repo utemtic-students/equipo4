@@ -1,0 +1,81 @@
+<%= render 'navigation' %>
+      <div class="rightColumnAdmin">
+        <div class="card blacks">
+          <h1>Listado de impresiones pendientes</h1>
+          <table class="tg">
+            <tr>
+              <% if current_user.role == "admin" %>
+              <% @users = User.all %>
+              <% @users.each do |user| %>
+                Name: <%= user.name %> <br>
+                e-mail: <%= user.email %>
+                <%= button_to "Cancel account", user,  method: :delete, data: { confirm: "Are you sure?" } %>
+                   <% @surveys.each do |survey| %>
+                   <%if survey.user == nil %>
+                  <% survey.destroy %>
+                    <%end%>
+                <%end%>
+                <%end%>
+                <th class="table-size">User</th>
+              <% end %>
+              <th class="table-size">Date</th>
+              <th class="table-size">Status</th>
+              <th class="table-size-min"></th>
+              <th class="table-size-min"></th>
+            </tr>
+            <% @surveys.each do |survey| %>
+            <tr>
+              <% if can? :read, survey %>
+              <% if current_user.role == "admin" %>
+                <td class="table-size"><%= survey.user.name %><%if survey.user == nil %>
+                  <% survey.destroy %>
+                    <%end%></td>
+              <%end%>
+              <td class="table-size"><%= survey.created_at %></td>
+              <td class="table-size-min"><%= link_to 'Show', survey %></td>
+              <% if can? :update, survey %>
+                <td class="table-size-min"><%= link_to 'Edit', edit_survey_path(survey) %></td>
+              <% end %>
+              <% if can? :destroy, @survey %>
+                <td class="table-size-min"><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+              <% end %>
+              <% end %>
+              <% end %>
+            </tr>
+          </table>
+        </div>
+        <% if current_user.role == "admin" %>
+        <div class="card blacks">
+          
+          <table class="tg">
+          
+            <% @surveys.each do |survey| %>
+            <% if can? :read, survey %>
+            
+              <%break%>
+            <% end %>
+            <% end %>
+            </tr>
+          </table>
+        </div>
+        <div class="card blacks">
+          <h1>STATISTICS</h1> 
+          <table class="tg">
+            <tr>
+              <th class="table-size-ad">Usuarios en la BD</th>
+              <th class="table-size-ad">Log de impresiones</th>
+            </tr>
+            <tr>
+              <td class="table-size-ad">
+                <%= User.count %>
+              </td>
+              <td class="table-size-ad">
+                <%= Survey.count %>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <% end %>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  get 'modulos/index'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :surveys
     resources :users
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'surveys#index'
+  root 'modulos#index'
   #root to: "registrations#current_user_home"
   # map.connect ':id', :controller => 'surveys', :action => 'show'
   #root :to => 'surveys#show', :id => Survey.find_by_name("name").id

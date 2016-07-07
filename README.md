@@ -1,11 +1,11 @@
-# Morralla Virtual
+# Morralla Virtual - Old Proyect
 
 ## Install
 
 You require to install [rvm](https://rvm.io/) and then create database.yml
 
     cp config/database.sample.yml config/database.yml
-  
+
 Then you need to install the gems
 
     bundle install

@@ -1,0 +1,77 @@
+<div id="menu">	
+	<div id="titulo">
+		<h1>Administrar
+		Impresiones</h1>
+	</div>
+	<div class="opcion">
+		<%= link_to 'Pedidos Impresos', controller: 'orders' %>
+	</div>
+	<div class="opcion">
+		<%= link_to 'Pedidos en Progreso', controller: 'progress' %>
+	</div>
+	<div class="opcion">
+		<%= link_to 'Pedidos Cancelados', controller: 'cancels' %>
+	</div>
+	<div class="opcion"  id="op1">
+		<%= link_to 'Historial de Pedidos', controller: 'historials'%>
+	</div>
+</div>
+<div id="contenido">	
+	
+	<div id="buscador">
+		<%= search_form_for(@search, url: "/historials/index", method: :get) do |f| %>
+			<%= f.text_field :usuario_cont, size: "30", placeholder: 'Usuario'%>
+			<%= f.text_field :carrera_cont, size:"1", placeholder: "Carrera" %>
+		  	<%= f.text_field :archivo_cont, size:"8", placeholder: "Archivo" %>
+
+		  	<%= f.text_field :fecha_gteq, size:"4", placeholder: "Fecha Inicial" %>
+		  	<%= f.text_field :fecha_lteq, size:"4", placeholder: "Fecha Final" %>
+		  	
+		  	<%= f.text_field :monto_cont, size:"1", placeholder: "Monto" %>
+		  	<%= f.text_field :estado_cont, size:"1", placeholder: "Estado" %>
+			<%= f.submit "Buscar" %>
+		<% end %>
+	</div>
+	
+	<table>
+		<tr>
+			<th><%= sort_link(@search, :usuario, "Usuario") %></th>
+			<th><%= sort_link(@search, :carrera, "Carrera") %></th>
+			<th><%= sort_link(@search, :archivo, "Archivo") %></th>
+			<th><%= sort_link(@search, :fecha, "Fecha") %></th>
+			<th><%= sort_link(@search, :monto, "Monto") %></th>
+			<th><%= sort_link(@search, :pago, "Estado") %></th>
+			<th>Entrega</th>
+		</tr>
+		<% @registros.each do |n| %>
+			<tr>
+				<td><%= n.usuario %></td>
+				<td><%= n.carrera %></td>
+				<td><%= n.archivo %></td>
+				<td><%= n.created_at %></td>
+				<td>$<%= n.monto %></td>
+				<td><%= n.pago %></td>
+				<td><input type="button" name="entregar" value="Entregar"></td>
+			</tr>
+		<% end %>
+		<!--<tr>
+			<td>Juan Pedro</td>
+			<td>Gastronomia</td>
+			<td>Receta.pdf</td>
+			<td>25/Junio/2016 - 17:00</td>
+			<td>$3.00</td>
+			<td>Pagado</td>
+			<td><input type="button" name="entregar" value="Entregar"></td>
+		</tr>
+		<tr>
+			<td>Francisco Lopez</td>
+			<td>TIC</td>
+			<td>tutorial.pdf</td>
+			<td>25/Junio/2016 - 17:00</td>
+			<td>$15.00</td>
+			<td>Adeudo</td>
+			<td><input type="button" name="entregar" value="Entregar"></td>						
+		</tr>-->
+		
+	</table>
+</div>

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'historials/index'
+
+  get 'cancels/index'
+
+  get 'progress/index'
+
+  get 'orders/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

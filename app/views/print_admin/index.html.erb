@@ -1,0 +1,69 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to"<button class = 'btn btn-default'>Regresar a Menu</button>".html_safe, root_path%>
+  </div>
+  <div class="col-md-10">
+  <div class="col-md-12">
+      <button type="button " name="disM" class="btn  btn-default" id="DishableModule" >Deshabilitar Modulo de Impresion</button>
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h3>Filtros de Impresiones</h3>
+  </div>
+</div>
+  <div class="row">
+    <!--<button type="button" name="button" class="btn" id="AddFilter" >+</button>-->
+    <%= form_tag("/Impresiones", method: "post") do %>
+    <div class="col-md-2">
+      <select class="form-control" id ="filterType">
+        <option value="select">Selecione...</option>
+        <option value="typeofpayment">Tipo de Pago</option>
+        <option value="date">Fecha</option>
+        <option value="dates">Rango de Fechas</option>
+        <option value="ghost">Fantasmas</option>
+      </select>
+    </div>
+    <div class="col-md-8">
+      <div class="col-md-5" id="ID_container">
+          <%= text_field_tag("typeofpayment",@V2? @V2 : ""  , :class=>"form-control",:type=>"",:placeholder=> "Tipo de Pago") %></p>
+      </div>
+      <div class="col-md-5" id="FirstDate_container">
+          <%= date_field_tag("FirstDate",@V3 ? @V3 : "Desde" , :class=>"form-control",:type=>"hidden" ) %></p>
+      </div>
+      <div class="col-md-5" id="LastDate_container">
+          <%= date_field_tag("LastDate",@V4 ? @V4 : "Hasta" , :class=>"form-control",:type=>"hidden") %></p>
+      </div>
+      <div class="extraFilters">
+
+      </div>
+
+    </div>
+
+    <div class="col-md-2" id="Filtra_container">
+      <%= submit_tag("Filtrar",:id => "Filtrar",:class=>"btn btn-primary") %>
+    </div>
+      <% end%>
+  </div>
+
+</div>
+
+<div class="container">
+  <table id="impresiones " class="table table-striped table-borderd">
+    <thead>
+      <tr>
+        <th>ImpresionId</th>
+        <th>Usuario</th>
+        <th>Fecha Creada</th>
+        <th>descripcion</th>
+        <th>Tipo de Pago</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+</div>

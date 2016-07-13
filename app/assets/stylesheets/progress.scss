@@ -1,6 +1,80 @@
 // Place all the styles related to the progress controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	float: left;
+}
+/*#superior {
+	background-color: grey;
+	width: 95%;
+	-height: 100px;
+	height: 30%;
+	float: left;
+	padding-left: 5%;
+	-position: relative;
+}*/
+#titulo {
+	width: 20%;
+	/*position: absolute;*/
+	/*margin-top: 20%;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-bottom: 30%;*/
+	text-align: center;
+	/*position: absolute;*/	
+	float: left;
+}
+/*#usuario {
+	width: 30%;
+	height: auto;
+	position: absolute;
+	right: 10px;
+	text-align: right;	
+}*/
+#menu {
+	background-color: #0000FF;
+	width: 100%;
+	/*height: 128.2px;	*/
+	height: 20%;
+	/*float: left;*/
+	/*padding-left: 10px;*/
+	font: bold 100% sans-serif;
+	/*position: absolute;*/
+}
+.opcion {
+	width: 18%;
+	height: 30px;
+	/*padding-left: 0.8%;*/
+	padding-top: 0.6%;
+	background-color: #0101DF;
+	margin-top: 6.2%;
+	/*text-decoration-color: black;*/
+	/*position: absolute;*/
+	margin-left: 1%;
+	float: left;
+	text-align: center;
+}
+a {
+	color: black;
+	text-decoration: none;
+}
+a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+#op1 {
+	background-color: white;
+	font: bold 120% sans-serif;
+}
 #contenido {
 	background-color: white;
 	width: 100%;

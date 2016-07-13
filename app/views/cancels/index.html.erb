@@ -40,8 +40,7 @@
 			<th><%= sort_link(@search, :archivo, "Archivo") %></th>
 			<th><%= sort_link(@search, :fecha, "Fecha") %></th>
 			<th><%= sort_link(@search, :monto, "Monto") %></th>
-			<th><%= sort_link(@search, :pago, "Estado") %></th>
-			<th>Entrega</th>
+			<th><%= sort_link(@search, :pago, "Estado") %></th>			
 		</tr>
 		<% @registros.each do |n| %>
 			<tr>
@@ -51,7 +50,6 @@
 				<td><%= n.created_at %></td>
 				<td>$<%= n.monto %></td>
 				<td><%= n.pago %></td>
-				<td><input type="button" name="entregar" value="Entregar"></td>
 			</tr>
 		<% end %>
 		<!--<tr>

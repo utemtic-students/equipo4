@@ -41,7 +41,7 @@
 			<th><%= sort_link(@search, :fecha, "Fecha") %></th>
 			<th><%= sort_link(@search, :monto, "Monto") %></th>
 			<th><%= sort_link(@search, :pago, "Estado") %></th>
-			<th>Entrega</th>
+			<th>Opcion</th>
 		</tr>
 		<% @registros.each do |n| %>
 			<tr>
@@ -51,7 +51,11 @@
 				<td><%= n.created_at %></td>
 				<td>$<%= n.monto %></td>
 				<td><%= n.pago %></td>
+<<<<<<< HEAD
 				<td><%= link_to "Impreso", {:controller => "progress", :action => "edit", :id => n.id } %></td>
+=======
+				<td><input type="button" name="cancelar" value="Cancelar"></td>
+>>>>>>> dde50440d8a0392237b39516571efa02e89350f3
 			</tr>
 		<% end %>
 		<!--<tr>

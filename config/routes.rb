@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'historials/index'
 
   get 'cancels/index'
@@ -10,6 +11,10 @@ Rails.application.routes.draw do
   get 'orders/edit'
 
   get 'progress/edit'
+  
+  devise_for :users, :controllers => { registrations: 'registrations' }
+ 
+    resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

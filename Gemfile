@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'paypal-sdk-rest', '~> 1.4', '>= 1.4.9'
 gem 'cancan'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

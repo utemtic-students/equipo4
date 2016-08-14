@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
   <div class="col-md-2">
-    <%= link_to"<button class = 'btn btn-default'>Regresar a Menu</button>".html_safe, root_path%>
+    <% #link_to"<button class = 'btn btn-default'>Regresar a Menu</button>".html_safe, root_path%>
   </div>
   <div class="col-md-10">
   <div class="col-md-12">
@@ -16,7 +16,7 @@
 </div>
   <div class="row">
     <!--<button type="button" name="button" class="btn" id="AddFilter" >+</button>-->
-    <%= form_tag("/Impresiones", method: "post") do %>
+    <%= search_form(@search,url: :impAd, method: "get") do %>
     <div class="col-md-2">
       <select class="form-control" id ="filterType">
         <option value="select">Selecione...</option>
@@ -54,15 +54,19 @@
   <table id="impresiones " class="table table-striped table-borderd">
     <thead>
       <tr>
-        <th>ImpresionId</th>
-        <th>Usuario</th>
-        <th>Fecha Creada</th>
-        <th>descripcion</th>
-        <th>Tipo de Pago</th>
+        <th><%= sort_link(@search, :id, "ID")%></th>
+        <th>><%= sort_link(@search, :Usuario, "Usuario")%></th>
+        <th><%= sort_link(@search, :FechaCreada, "Fecha Creada")%></th>
+        <th><%= sort_link(@search, :descripcion, " descripcion")%></th>
+        <th><%= sort_link(@search, :TipodePago, " Tipo de Pago")%></th>
       </tr>
     </thead>
     <tbody>
-
+      <% #@Impresiones.each do |n|%>
+        <tr>
+          <td><% #n.id aqui va los nombres que tiene en la tabla de la base de datos%></td>
+        </tr>
+      <% #end %>
     </tbody>
   </table>
 

@@ -5,6 +5,8 @@ class PrintAdminController < ApplicationController
       #@Impresiones =@Impresiones.typeofpayment(params['typeofpayment'])  if params['typeofpayment'].present?
       #@Impresiones =@Impresiones.specificdate(params['FirstDate']) if params['FirstDate'].present?
       #@Impresiones =@Impresiones.daterange(params['FirstDate'], params['LastDate'])if params['FirstDate'].present?
+      #@search=Impresion.search(params[:q])
+      #@Impresiones=@search.result
 
    end
 end

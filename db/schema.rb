@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20160814032907) do
   enable_extension "plpgsql"
 
   create_table "log_morrallas", force: :cascade do |t|
-    t.integer  "idUser",      null: false
-    t.integer  "idUserAdmin"
+    t.integer  "userId",      null: false
+    t.integer  "userAdminId"
     t.decimal  "mount",       null: false
     t.integer  "paid",        null: false
     t.datetime "created_at",  null: false
@@ -30,18 +30,18 @@ ActiveRecord::Schema.define(version: 20160814032907) do
     t.datetime "updated_at", null: false
     t.integer  "state",      null: false
     t.integer  "typeOrder",  null: false
-    t.integer  "idMount",    null: false
+    t.integer  "mountId",    null: false
   end
 
   create_table "morrallas", force: :cascade do |t|
-    t.integer  "idUser",     null: false
+    t.integer  "userId",     null: false
     t.decimal  "mount",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "idUser",     null: false
+    t.integer  "userId",     null: false
     t.string   "linkFile",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

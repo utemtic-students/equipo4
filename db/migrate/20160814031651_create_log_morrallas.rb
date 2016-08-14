@@ -5,7 +5,7 @@ class CreateLogMorrallas < ActiveRecord::Migration
       t.integer    :idUser,     null: false
       t.integer    :idUserAdmin,null: true
       t.decimal    :mount,      null: false
-      t.integer    :type,       null: false
+      t.integer    :paid,       null: false
       t.timestamps :date,       null: false
 
       t.timestamps null: false

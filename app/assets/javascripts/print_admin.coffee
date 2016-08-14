@@ -16,12 +16,19 @@ jquery =->
             if o.val() == "date" then  showdate()
             if o.val() == "dates" then  showdates()
             if o.val() == "ghost" then  showghost()
+            if o.val() == "all" then  all()
+
 
 clear =->
         $("#ID_container").hide()
         $("#FirstDate_container").hide()
         $("#LastDate_container").hide()
         $("#Filtra_container").hide()
+all =->
+        $("#ID_container").show()
+        $("#FirstDate_container").show()
+        $("#LastDate_container").show()
+        $("#Filtra_container").show()
 showpayment =->
         $("#ID_container").show()
         $("#FirstDate_container").hide()

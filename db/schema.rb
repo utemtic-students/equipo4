@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813220524) do
+ActiveRecord::Schema.define(version: 20160814032907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "logMorralla", force: :cascade do |t|
+  create_table "log_morrallas", force: :cascade do |t|
     t.integer  "idUser",      null: false
     t.integer  "idUserAdmin"
     t.decimal  "mount",       null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160813220524) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "logPrint", force: :cascade do |t|
+  create_table "log_prints", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "state",      null: false
@@ -33,12 +33,14 @@ ActiveRecord::Schema.define(version: 20160813220524) do
     t.integer  "idMount",    null: false
   end
 
-  create_table "morralla", force: :cascade do |t|
-    t.integer "idUser", null: false
-    t.decimal "mount",  null: false
+  create_table "morrallas", force: :cascade do |t|
+    t.integer  "idUser",     null: false
+    t.decimal  "mount",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "order", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.integer  "idUser",     null: false
     t.string   "linkFile",   null: false
     t.datetime "created_at", null: false
@@ -57,10 +59,18 @@ ActiveRecord::Schema.define(version: 20160813220524) do
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.string   "permission_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "career"
+    t.string   "grade"
+    t.string   "imgProfile"
+    t.string   "status"
+    t.string   "rol"
+    t.string   "sex"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

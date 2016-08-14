@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 20160814032907) do
   enable_extension "plpgsql"
 
   create_table "log_morrallas", force: :cascade do |t|
-    t.integer  "userId",      null: false
-    t.integer  "userAdminId"
-    t.decimal  "mount",       null: false
-    t.integer  "paid",        null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id",       null: false
+    t.integer  "user_admin_id"
+    t.decimal  "mount",         null: false
+    t.integer  "paid",          null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "log_prints", force: :cascade do |t|
@@ -30,24 +30,24 @@ ActiveRecord::Schema.define(version: 20160814032907) do
     t.datetime "updated_at", null: false
     t.integer  "state",      null: false
     t.integer  "typeOrder",  null: false
-    t.integer  "mountId",    null: false
+    t.integer  "mount_id",   null: false
   end
 
   create_table "morrallas", force: :cascade do |t|
-    t.integer  "userId",     null: false
+    t.integer  "user_id",    null: false
     t.decimal  "mount",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "userId",     null: false
+    t.integer  "user_id",    null: false
     t.string   "linkFile",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "state",      null: false
     t.integer  "paid",       null: false
-    t.decimal  "Mount",      null: false
+    t.decimal  "mount",      null: false
   end
 
   create_table "users", force: :cascade do |t|

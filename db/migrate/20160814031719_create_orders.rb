@@ -2,7 +2,7 @@ class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
 
-      t.integer    :idUser,     null: false
+      t.integer    :userId,     null: false
       t.string     :linkFile,   null: false
       t.timestamps :date,       null: false
       t.integer    :state,      null: false

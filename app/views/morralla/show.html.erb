@@ -1,0 +1,16 @@
+<%= render 'navigation' %>
+      <div class="rightColumnAdmin">
+        <div class="card blacks">
+          <h1>Agrega saldo a tu morralla</h1>
+          
+         Saldo: <%= form_for(:ad, :url => {:action => 'agregar_saldo'}) do |f| %>
+  <%= f.text_field(:mount) %>
+  
+  <%= submit_tag("Submit") %>
+
+<% end %>
+
+        </div>
+        
+    </div>
+</div>

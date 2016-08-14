@@ -1,0 +1,98 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-2">
+    <!--Dont Forget to Change URL to home page-->
+    <%= link_to"<button class = 'btn btn-default'>Regresar a Menu</button>".html_safe, url: "/UserAdmin"%>
+  </div>
+  <div class="col-md-10">
+  <div class="col-md-12">
+      <button type="button " name="disM" class="btn  btn-default" id="DishableModule" >Deshabilitar Modulo de Impresion</button>
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h3>Filtros de Impresiones</h3>
+  </div>
+</div>
+  <div class="row">
+    <!--<button type="button" name="button" class="btn" id="AddFilter" >+</button>-->
+    <%= search_form_for(@User, url: "/UserAdmin", method: :get) do |f| %>
+    <div class="col-md-2">
+      <select class="form-control" id ="filterType">
+        <option value="select">Selecione...</option>
+        <option value="typeofpayment">Tipo de Pago</option>
+        <option value="date">Fecha</option>
+        <option value="dates">Rango de Fechas</option>
+        <option value="ghost">Fantasmas</option>
+        <option value="all">Todas las Opciones</option>
+      </select>
+    </div>
+    <div class="col-md-8">
+      <div class="col-md-5" id="ID_container">
+        <%= f.text_field :email_cont, size: "30", placeholder: 'Corréo'%>
+
+      </div>
+      <div class="col-md-5" id="FirstDate_container">
+        <%= f.text_field :name_cont, size: "30", placeholder: 'Nombre'%>
+
+
+      </div>
+      <div class="col-md-5" id="LastDate_container">
+        <%= f.text_field :career_cont, size: "30", placeholder: 'Carrera'%>
+      </div>
+
+
+    </div>
+
+    <div class="col-md-2" id="Filtra_container">
+      <%= f.submit "Buscar" %>
+    </div>
+      <% end%>
+  </div>
+
+</div>
+<hr>
+<div class="">
+  <table>
+    <thead>
+      <tr>
+        <th><%= sort_link(@User, :email, "Coréo") %></th>
+  			<th><%= sort_link(@User, :name, "Nombre") %></th>
+  			<th><%= sort_link(@User, :career, "Carrera") %></th>
+  			<th><%= sort_link(@User, :grade, "Grupo") %></th>
+        <th><%= sort_link(@User, :status, "Estatus") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @Results.each do |i|%>
+        <tr>
+          <td>
+            <%= i.email%>
+          </td>
+          <td>
+            <%= i.name%>
+          </td>
+          <td>
+            <%= i.career%>
+          </td>
+          <td>
+            <%= i.grade%>
+          </td>
+          <td>
+            <%= i.status%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <%= link_to"<button class = 'btn btn-default'>PDF</button>".html_safe, url: "/UserAdmin"%>
+      <%= link_to"<button class = 'btn btn-default'>WORD</button>".html_safe, url: "/UserAdmin"%>
+      <%= link_to"<button class = 'btn btn-default'>EXCEL</button>".html_safe, url: "/UserAdmin"%>
+
+    </div>
+  </div>
+</div>

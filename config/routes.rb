@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  
+
   get "archivos/subir_archivos"
   post "archivos/subir_archivos"
   get "archivos/listar_archivos"
   post "archivos/borrar_archivos"
   get "archivos/guardar_coments"
   post "archivos/guardar_coments"
+
 
 
   get 'modulos/index'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get '/UserAdmin'=> 'user_admin#index'
 
   # You can have the root of your site routed with "root"
   root 'modulos#index'

@@ -1,0 +1,15 @@
+<%= render 'navigation' %>
+    <div class="rightColumn">
+      <div class="card blacks">
+      <% if current_user == @survey.user %>
+        <h1>EDITING SURVEY</h1>
+        <%= render 'form' %>
+      <%else%> 
+        <h1>You cannot edit this survey.</h1>
+      <%end%>
+      <br>
+      <%= link_to 'Back', surveys_path %>
+      </div>
+    </div>
+  </div>
+</div>

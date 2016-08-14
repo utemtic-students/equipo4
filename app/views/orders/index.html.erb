@@ -19,23 +19,17 @@
 <div id="contenido">	
 	
 	<div id="buscador">
-	<%= search_form_for(@searchUser, url: "/orders/index", method: :get) do |f| %>
-			<%= f.text_field :name_cont, size: "30", placeholder: 'Usuario'%>
-			<%= f.text_field :career_cont, size:"1", placeholder: "Carrera" %>
-		  	
-			<%= f.submit "Buscar" %>
-		<% end %>
+	
 		<%= search_form_for(@search, url: "/orders/index", method: :get) do |f| %>
 			<!--<= f.text_field :name_cont, size: "30", placeholder: 'Usuario'%>
-			<= f.text_field :career_cont, size:"1", placeholder: "Carrera" %>
-		  	<= f.text_field :linkFile_cont, size:"8", placeholder: "Archivo" %>-->
-		  	
+			<= f.text_field :career_cont, size:"1", placeholder: "Carrera" %>-->
+		  	<%= f.text_field :linkFile_cont, size:"8", placeholder: "Archivo" %>
 
 		  	<%= f.text_field :created_at_gteq, size:"4", placeholder: "Fecha Inicial" %>
 		  	<%= f.text_field :created_at_lteq, size:"4", placeholder: "Fecha Final" %>
 		  	
 		  	<%= f.text_field :Mount_cont, size:"1", placeholder: "Monto" %>
-		  	<%= f.text_field :type_cont, size:"1", placeholder: "Estado" %>
+		  	<%= f.text_field :paid_cont, size:"1", placeholder: "Estado" %>
 			<%= f.submit "Buscar" %>
 		<% end %>
 	</div>
@@ -47,17 +41,17 @@
 			<th><%= sort_link(@search, :linkFile, "Archivo") %></th>
 			<th><%= sort_link(@search, :created_at, "Fecha") %></th>
 			<th><%= sort_link(@search, :Mount, "Monto") %></th>
-			<th><%= sort_link(@search, :type, "Estado") %></th>
+			<th><%= sort_link(@search, :paid, "Estado") %></th>
 			<th>Opcion</th>
 		</tr>
 		<% @registros.each do |n| %>
 			<tr>
+				<td><%= n.id %></td>
 				<td><%= n.name %></td>
-				<td><%= n.career %></td>
 				<td><%= n.linkFile %></td>
 				<td><%= n.created_at %></td>
 				<td>$<%= n.Mount %></td>
-				<td><%= n.type %></td>
+				<td><%= n.paid %></td>
 				<td><%= link_to "Entregar", {:controller => "orders", :action => "edit", :id => n.id } %></td>
 			</tr>
 		<% end %>

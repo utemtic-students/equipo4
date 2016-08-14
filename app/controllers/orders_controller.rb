@@ -1,16 +1,16 @@
 class OrdersController < ApplicationController
   def index
-    @searchUser = User.search(params[:q])    
+    #@searchUser = User.search(params[:q])  
+    #@search = Order.search(params[:q])    
   	#@search = Order.search(params[@searchUser.id])
     #orderView = User.joins(:order)
-    #@orderView = Order.joins('INNER JOIN users ON "users"."id" = "orders"."idUser"')
-    #@search = @orderView.search(params[:q])
-    @search = Order.search(params[:q])    
-    #@registros = @search.result   
-    #@registros = User.joins('INNER JOIN orders ON "orders"."idUser" = users.id')
-    @registros = Order.joins('INNER JOIN users ON "users"."id" = "orders"."idUser"')
+    viewjoin = Order.joins('JOIN users ON "users"."id" = "orders"."idUser"')
+    @search = viewjoin.search(params[:q])      
+    @registros = @search.result   
+    #@registros = User.joins('JOIN orders ON "orders"."idUser" = users.id')
+    #@registros = Order.joins('INNER JOIN users ON "users"."id" = "orders"."idUser"')
     #@registros = @registros.where(:state => "impreso")
-    @registros = @registros.where(:state => "1")
+    #@registros = @registros.where(:status => "1")
   end
   def edit  	 	
   	@registro = Order.find(params[:id])

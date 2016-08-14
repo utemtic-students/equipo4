@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160814032907) do
     t.integer  "idUser",      null: false
     t.integer  "idUserAdmin"
     t.decimal  "mount",       null: false
-    t.integer  "type",        null: false
+    t.integer  "paid",        null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160814032907) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "state",      null: false
-    t.integer  "type",       null: false
+    t.integer  "paid",       null: false
     t.decimal  "Mount",      null: false
   end
 

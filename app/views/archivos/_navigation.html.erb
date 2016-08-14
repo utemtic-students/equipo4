@@ -1,0 +1,36 @@
+<div class="content">
+
+    <div class="leftColumn">
+
+        <div class="card" id="registro">
+          <div class="header">
+            <h1>Morralla</h1>
+            <h1>Virtual</h1>
+          </div>
+          <div class="card top-border">
+            <div class="menu-bars">
+              <%= current_user.email %>
+            </div>
+            <div class="menu-bars">
+              <%= link_to 'Home', modulos_index_path %>
+            </div>
+            
+            <div class="menu-bars">
+              <%= link_to '+Imprimir', archivos_subir_archivos_path %>
+            </div>
+            
+            <div class="menu-bars">
+              <%= link_to 'User settings', edit_user_registration_path %>
+            </div>
+            <div class="menu-bars">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            </div>
+          </div>
+        </div>
+
+        <div class="card top-border">
+            <p id="credits">
+            </p>
+        </div>
+
+    </div>

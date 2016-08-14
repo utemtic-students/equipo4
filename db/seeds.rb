@@ -19,6 +19,12 @@ User.delete_all
 
 Order.create(idUser: '1', linkFile: 'Integradora.pdf', Mount: '15.0', paid: '1', state: '1')
 Order.create(idUser: '2', linkFile: 'tarea.pdf', Mount: '13.0', paid: '1', state: '1')
+Order.create(idUser: '3', linkFile: 'Integradora.pdf', Mount: '15.0', paid: '1', state: '1')
+Order.create(idUser: '4', linkFile: 'tarea.pdf', Mount: '13.0', paid: '1', state: '1')
+Order.create(idUser: '5', linkFile: 'Integradora.pdf', Mount: '15.0', paid: '1', state: '1')
+Order.create(idUser: '6', linkFile: 'tarea.pdf', Mount: '13.0', paid: '1', state: '1')
+Order.create(idUser: '7', linkFile: 'Integradora.pdf', Mount: '15.0', paid: '1', state: '1')
+Order.create(idUser: '8', linkFile: 'tarea.pdf', Mount: '13.0', paid: '1', state: '1')
 
 User.create(email: 'a20130297@utem.edu.mx', encrypted_password: '1234', sign_in_count: '1', name: 'David Andres Muñoz Treviño', career: 'tic')
-User.create(email: 'a20130298@utem.edu.mx', encrypted_password: '12345', name: 'Eduardo Andres Muñoz Treviño', career: 'gastro')
+User.create(email: 'a20130298@utem.edu.mx', encrypted_password: '12345', sign_in_count: '1', name: 'Eduardo Andres Muñoz Treviño', career: 'gastro')

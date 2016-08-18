@@ -1,3 +1,6 @@
+<%= render 'navigation' %>
+      <div class="rightColumnAdmin">
+<div class="card blacks">
 <div id="menu">	
 	<div id="titulo">
 		<h1>Administrar
@@ -20,40 +23,46 @@
 	
 	<div id="buscador">
 	
-		<%= search_form_for(@search, url: "/orders/index", method: :get) do |f| %>
-			<!--<= f.text_field :name_cont, size: "30", placeholder: 'Usuario'%>
-			<= f.text_field :career_cont, size:"1", placeholder: "Carrera" %>-->
-		  	<%= f.text_field :linkFile_cont, size:"8", placeholder: "Archivo" %>
+		<!--<= search_form_for(@search, url: "/orders/index", method: :get) do |f| %>
+			<= f.text_field :user_id_cont, size: "30", placeholder: 'Usuario'%>
+			<= f.text_field :user_id_cont, size:"1", placeholder: "Carrera" %>
+		  	<= f.text_field :linkFile_cont, size:"8", placeholder: "Archivo" %>
 
-		  	<%= f.text_field :created_at_gteq, size:"4", placeholder: "Fecha Inicial" %>
-		  	<%= f.text_field :created_at_lteq, size:"4", placeholder: "Fecha Final" %>
+		  	<= f.text_field :created_at_gteq, size:"4", placeholder: "Fecha Inicial" %>
+		  	<= f.text_field :created_at_lteq, size:"4", placeholder: "Fecha Final" %>
 		  	
-		  	<%= f.text_field :Mount_cont, size:"1", placeholder: "Monto" %>
-		  	<%= f.text_field :paid_cont, size:"1", placeholder: "Estado" %>
-			<%= f.submit "Buscar" %>
-		<% end %>
+		  	<= f.text_field :mount_cont, size:"1", placeholder: "Monto" %>
+		  	<= f.text_field :paid_cont, size:"1", placeholder: "Estado" %>
+			<= f.submit "Buscar" %>
+		< end %>-->
 	</div>
 	
 	<table>
 		<tr>			
-			<th><%= sort_link(@search, :name, "Usuario") %></th>
-			<th><%= sort_link(@search, :career, "Carrera") %></th>
-			<th><%= sort_link(@search, :linkFile, "Archivo") %></th>
-			<th><%= sort_link(@search, :created_at, "Fecha") %></th>
-			<th><%= sort_link(@search, :Mount, "Monto") %></th>
-			<th><%= sort_link(@search, :paid, "Estado") %></th>
+			<!--<th><= sort_link(@search, :name, "Usuario") %></th>
+			<th><= sort_link(@search, :career, "Carrera") %></th>
+			<th><= sort_link(@search, :linkFile, "Archivo") %></th>
+			<th><= sort_link(@search, :created_at, "Fecha") %></th>
+			<th><= sort_link(@search, :mount, "Monto") %></th>
+			<th><= sort_link(@search, :paid, "Estado") %></th>-->
 			<th>Opcion</th>
 		</tr>
-		<% @registros.each do |n| %>
-			<tr>
-				<td><%= n.id %></td>
-				<td><%= n.name %></td>
-				<td><%= n.linkFile %></td>
-				<td><%= n.created_at %></td>
-				<td>$<%= n.Mount %></td>
-				<td><%= n.paid %></td>
-				<td><%= link_to "Entregar", {:controller => "orders", :action => "edit", :id => n.id } %></td>
+		
+		<% @registros1.each do |user| %>
+		<% @registros2.each do |order| %>
+			<!--< order.orders_bye_user(current_user).each do |user| %>-->
+			<tr>						
+				<td><%= order.user_id %></td>
+				<!--< registros = User.where(:id => n.user_id) %>				
+				<td><= registros %></td>-->
+				<td><%= user.email %></td>
+				<td><%= order.linkFile %></td>
+				<td><%= order.created_at %></td>
+				<td>$<%= order.mount %></td>
+				<td><%= order.paid %></td>
+				<td><%= link_to "Entregar", {:controller => "orders", :action => "edit", :id => order.id } %></td>
 			</tr>
+			<% end %>
 		<% end %>
 		<!--<tr>
 			<td>Juan Pedro</td>
@@ -75,4 +84,6 @@
 		</tr>-->
 		
 	</table>
+</div>
+</div>
 </div>

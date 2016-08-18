@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   get 'historials/index'
 
   get 'cancels/index'
@@ -12,8 +13,11 @@ Rails.application.routes.draw do
   get 'orders/edit'
 
   get 'progress/edit'
-
   
+  post 'morralla/agregar_saldo'
+
+  post 'morralla/cobrar'
+
   get "archivos/subir_archivos"
   post "archivos/subir_archivos"
   get "archivos/listar_archivos"
@@ -21,6 +25,10 @@ Rails.application.routes.draw do
   get "archivos/guardar_coments"
   post "archivos/guardar_coments"
 
+
+
+
+  resources :morralla
 
   get 'modulos/index'
 

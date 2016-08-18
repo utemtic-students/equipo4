@@ -12,7 +12,7 @@ def index
       @morralla = current_user.morralla.new(morralla_params)
 
     if @morralla.save 
-      redirect_to @morralla
+      render :index
     else 
       render :new  #render de la acción new
     end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   get 'morrallas/agregar_saldo'
   post 'morrallas/agregar_saldo'
 
@@ -7,12 +8,25 @@ Rails.application.routes.draw do
 
  
 
+=======
+  
+  devise_for :models
+>>>>>>> solution
   get "archivos/subir_archivos"
   post "archivos/subir_archivos"
   get "archivos/listar_archivos"
   post "archivos/borrar_archivos"
   get "archivos/guardar_coments"
   post "archivos/guardar_coments"
+  post "archivos/create"
+
+get "morrallas/new"
+post "morrallas/new"
+  get "morrallas/agregar_saldo"
+  post "morrallas/agregar_saldo"
+  post "morrallas/index"
+  get "morrallas/index"
+  post "morrallas" => "morrallas#agregar_saldo"
 
 
 
@@ -22,7 +36,7 @@ Rails.application.routes.draw do
   get 'modulos/index'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :prints
+  resources :archivos
     resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

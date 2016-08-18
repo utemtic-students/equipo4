@@ -1,0 +1,39 @@
+<%= render 'navigation' %>
+      <div class="rightColumnAdmin">
+        <div class="card blacks">
+          <h1>Agrega saldo a tu morralla</h1>
+          
+          Saldo disponible:
+          <h1><%= %></h1>
+
+
+
+
+
+
+        <%= form_for(@morralla) do |f| %>
+  <% if @morralla.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@morralla.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @morralla.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mount %><br>
+    <%= f.text_field :mount%>
+    
+  </div>
+  <div class="actions">
+    <%= f.submit "CARGA" %>
+  </div>
+<% end %>
+
+    </div>
+</div>

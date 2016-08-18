@@ -10,7 +10,21 @@
           <div class="card top-border">
             <div class="menu-bars">
               <%= current_user.email%>
+
             </div>
+
+            <div class="menu-bars">
+
+            </div>
+            <div class="menu-bars">
+              <%= link_to 'Home', modulos_index_path %>
+            </div>
+            
+            <div class="menu-bars">
+              <%= link_to '+Imprimir', archivos_subir_archivos_path %>
+            </div>
+            
+            
            
             <div class="menu-bars">
               <%= link_to "Log out", destroy_user_session_path, method: :delete %>

@@ -8,11 +8,11 @@ module Initialize
     end
 
     def self.create_morralla(data)
-      amount_data = {
+      mount_data = {
         user_id: data['id'],
-        amount: 0.0
+        mount: 0.0
       }
-      morralla = Morralla.create_with(amount_data).find_or_initialize(user: data)
+      morralla = Morralla.create_with(mount_data).find_or_initialize_by(user: data)
       print morralla.save(validate: false) ? '.' : 'X'
     end
   end

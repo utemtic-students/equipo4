@@ -10,9 +10,9 @@ module Initialize
     def self.create_user_master
       user_data_1 = {
         email: "a20130436@utem.edu.mx",
-        encrypted_password: "a20130436",
+        password: "a20130436",
+        password_confirmation: "a20130436",
         name: "David M.",
-        permission_level: 0,
         career: "TICs",
         grade: 9,
         imgProfile: "",
@@ -21,16 +21,16 @@ module Initialize
         sex: "M"
       }
 
-      User.where(user_data_1).first_or_create
+      User.create(user_data_1)
       print '.'
     end
 
     def self.create_user_admin
       user_data_2 = {
         email: "a201302926@utem.edu.mx",
-        encrypted_password: "a20130292",
+        password: "a20130292",
+        password_confirmation: "a20130292",
         name: "Christian R.",
-        permission_level: 1,
         career: "TICs",
         grade: 9,
         imgProfile: "",
@@ -39,16 +39,16 @@ module Initialize
         sex: "M"
       }
 
-      User.where(user_data_2).first_or_create
+      User.create(user_data_2)
       print '.'
     end
 
     def self.create_user_child_one
       user_data_3 = {
         email: "a20130271@utem.edu.mx",
-        encrypted_password: "a20130271",
+        password: "a20130271",
+        password_confirmation: "a20130271",
         name: "Cristian J.",
-        permission_level: 2,
         career: "TICs",
         grade: 9,
         imgProfile: "",
@@ -57,16 +57,16 @@ module Initialize
         sex: "M"
       }
 
-      User.where(user_data_3).first_or_create
+      User.create(user_data_3)
       print '.'
     end
 
     def self.create_user_child_two
       user_data_4 = {
         email: "a20130000@utem.edu.mx",
-        encrypted_password: "a20130000",
+        password: "a20130000",
+        password_confirmation: "a20130000",
         name: "FourDACH",
-        permission_level: 2,
         career: "OSI",
         grade: 4,
         imgProfile: "",
@@ -75,7 +75,7 @@ module Initialize
         sex: "F"
       }
 
-      User.where(user_data_4).first_or_create
+      User.create(user_data_4)
       print '.'
     end
   end

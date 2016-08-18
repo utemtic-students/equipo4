@@ -1,12 +1,22 @@
 class ArchivosController < ApplicationController
+      before_action :authenticate_user!, except: [:show, :index]
+
 	 Ruta_archivo_coments = "public/coments/coments.txt";
    Ruta_directorio_archivos = "public/archivos/";
 
+   def create
+         @archivo = current_user.archivos.new(params[:id]);
+         render :subir_archivos
+
+   end
   def subir_archivos
+          
+
    @formato_erroneo = false;
    if request.post?
       #Archivo subido por el usuario.
       archivo = params[:archivo];
+        #@archivos = current_user.archivos.new(params[:archivo]);
       #Nombre original del archivo.
       nombre = archivo.original_filename;
       #Directorio donde se va a guardar.
@@ -84,7 +94,5 @@ class ArchivosController < ApplicationController
    redirect_to :controller => "archivos", :action => "listar_archivos", :eliminar_archivo => eliminar_archivo;
  end
 
-  def guardar_coments
   
- end
 end

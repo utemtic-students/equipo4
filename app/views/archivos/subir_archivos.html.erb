@@ -11,6 +11,12 @@
      <p> El formato ingresado es incorrecto. Usted sólo puede subir archivos .pdf, .doc y .docx </p>
   </div>
 <% end %>
+
+    <%= label :q40, "Lo vas a dejar pagado?" %><br>
+    <%= radio_button :q40, 1, class:"radio" %>Cobrar de mi morralla
+    <%= radio_button :q40, 2, class:"radio" %>Pago contra entrega
+
+
 <p>  <%= link_to "Back", "listar_archivos" %>
 </div>
 </div>

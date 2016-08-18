@@ -1,0 +1,23 @@
+<%= render 'navigation' %>
+      <div class="rightColumnAdmin">
+        <div class="card blacks">
+          <h1>Agrega saldo a tu morralla</h1>
+          
+          Saldo disponible:
+          <h1><%= %></h1>
+
+
+<%= form_for :post, :url => { :action => :agregar_saldo } do |f| %>
+
+  <p>
+    <%= f.label :mount %><br>
+    <%= f.text_field :mount%>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+        
+    </div>
+</div>

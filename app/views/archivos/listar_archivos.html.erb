@@ -16,10 +16,13 @@
    <% if a == "." or a == ".." then next end; %>
    <li>
       <strong> <%= a %> </strong> | 
+
       <a target="_blank" href="/archivos/<%= a %>"> Ver archivo </a> | 
+
       <%= link_to "Borrar archivo", {:controller => "archivos", :action => "borrar_archivos", :archivo_a_borrar => a}, {:method => "post", :confirm => "Seguro?"} %>
    </li>
    <% end %>
+
 </ul>
 <!-- Acá se guarda el nombre del archivo antes de que el formularo sea enviado-->
 <hr />

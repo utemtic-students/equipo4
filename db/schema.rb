@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20160818052921) do
   end
 
   create_table "log_morrallas", force: :cascade do |t|
-    t.integer  "idUser",      null: false
-    t.integer  "idUserAdmin"
-    t.decimal  "mount",       null: false
-    t.integer  "type",        null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id",       null: false
+    t.integer  "user_admin_id"
+    t.decimal  "mount",         null: false
+    t.integer  "paid",          null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "log_prints", force: :cascade do |t|
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160818052921) do
     t.datetime "updated_at", null: false
     t.integer  "state",      null: false
     t.integer  "typeOrder",  null: false
-    t.integer  "idMount",    null: false
+    t.integer  "mount_id",   null: false
   end
 
   create_table "models", force: :cascade do |t|
@@ -58,8 +58,13 @@ ActiveRecord::Schema.define(version: 20160818052921) do
   add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true, using: :btree
 
   create_table "morrallas", force: :cascade do |t|
+<<<<<<< HEAD
+    t.integer  "user_id",    null: false
+    t.decimal  "mount",      null: false
+=======
     t.integer  "mount"
     t.integer  "user_id"
+>>>>>>> solution
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,13 +77,13 @@ ActiveRecord::Schema.define(version: 20160818052921) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "idUser",     null: false
+    t.integer  "user_id",    null: false
     t.string   "linkFile",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "state",      null: false
-    t.integer  "type",       null: false
-    t.decimal  "Mount",      null: false
+    t.integer  "paid",       null: false
+    t.decimal  "mount",      null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,10 +102,10 @@ ActiveRecord::Schema.define(version: 20160818052921) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "career"
-    t.string   "grade"
+    t.integer  "grade"
     t.string   "imgProfile"
-    t.string   "status"
-    t.string   "rol"
+    t.boolean  "status"
+    t.integer  "rol"
     t.string   "sex"
   end
 

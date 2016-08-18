@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
+  get 'morrallas/agregar_saldo'
+  post 'morrallas/agregar_saldo'
+
+  post 'morrallas/cobrar'
+
+ 
+
+=======
   
   devise_for :models
+>>>>>>> solution
   get "archivos/subir_archivos"
   post "archivos/subir_archivos"
   get "archivos/listar_archivos"
@@ -18,6 +28,10 @@ post "morrallas/new"
   get "morrallas/index"
   post "morrallas" => "morrallas#agregar_saldo"
 
+
+
+
+  resources :morralla
 
   get 'modulos/index'
 

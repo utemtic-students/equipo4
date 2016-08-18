@@ -66,10 +66,10 @@ ActiveRecord::Schema.define(version: 20160814032907) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "career"
-    t.string   "grade"
+    t.integer  "grade"
     t.string   "imgProfile"
-    t.string   "status"
-    t.string   "rol"
+    t.boolean  "status"
+    t.integer  "rol"
     t.string   "sex"
   end
 

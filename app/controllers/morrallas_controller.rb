@@ -2,6 +2,7 @@ class MorrallasController < ApplicationController
     
 def index
 		@morrallas= Morralla.all 
+    #@saldo = @morralla.where(user_id: current_user.user_id)
 	end
 
   def new

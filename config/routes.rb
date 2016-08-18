@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  
-  post 'morralla/agregar_saldo'
+  get 'morrallas/agregar_saldo'
+  post 'morrallas/agregar_saldo'
 
-  post 'morralla/cobrar'
+  post 'morrallas/cobrar'
+
+ 
 
   get "archivos/subir_archivos"
   post "archivos/subir_archivos"

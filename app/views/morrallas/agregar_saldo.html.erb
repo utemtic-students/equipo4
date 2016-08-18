@@ -1,0 +1,25 @@
+<%= render 'navigation' %>
+      <div class="rightColumnAdmin">
+        <div class="card blacks">
+          <h1>Agrega saldo a tu morralla</h1>
+          
+         <%= form_for(@morralla) do |f|%>
+
+	<% @morralla.errors.full_messages.each do |message|%>
+
+			* <%= message %>
+		</div>
+		<%end%>
+		<div class="field">
+			<%= f.text_field :mount, placeholder: "Título", class:"form-control" %>
+		</div>
+		<div>
+			<%= f.submit "Cargar"%>
+		</div>
+
+<%end%>
+
+        </div>
+        
+    </div>
+</div>

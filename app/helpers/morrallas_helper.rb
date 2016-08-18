@@ -1,0 +1,2 @@
+module MorrallasHelper
+end

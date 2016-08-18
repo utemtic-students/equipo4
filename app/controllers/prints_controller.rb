@@ -20,7 +20,7 @@ class PrintsController < ApplicationController
   # POST /surveys
   # POST /surveys.json
   def create
-       @print = current_user.print∫.new(print_params)
+       @print = current_user.print.new(print_params)
 
     respond_to do |format|
       if @print.save

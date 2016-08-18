@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :order
+  has_many :order
   has_one :morralla
   has_one :log_print
   has_one :log_morralla
